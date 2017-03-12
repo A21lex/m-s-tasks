@@ -9,14 +9,14 @@ Sally::Sally()
 
 }
 
-Sally::Sally(std::string text){
+Sally::Sally(string text){
     str = text;
 }
 
 /**
     Overloaded assignment operator assigns a string to a "str" field of a Sally object
 */
-Sally Sally::operator=(std::string passingString){
+Sally Sally::operator=(string passingString){
     cout << "Using overloaded assignment operator" << endl;
     cout << "String passed to Sally is: " << passingString << endl;
     (*this).str = passingString;
@@ -24,11 +24,23 @@ Sally Sally::operator=(std::string passingString){
 
 }
 /**
+    Overloaded == operator checks equality of a Sally object with a given string
+*/
+bool Sally::operator==(string stringToCheck){
+    cout << "Using overloaded == operator" << endl;
+    cout << "Checking if " << (*this).str << " is equal to " << stringToCheck << endl;
+    if((*this).str == stringToCheck){
+        return true;
+    }
+    return false;
+}
+
+/**
     Overloaded << shifts characters of a string to the left by a defined value
 */
 const char* Sally::operator<<(int num){
     cout << "Shifting characters with left arrows by value : " << num << endl;
-    std::string currentString = (*this).str;
+    string currentString = (*this).str;
     const char *chars = currentString.c_str();
     char *keepShifted = new char[currentString.length()-num];
     char *moveLeft = new char[num + 1];
@@ -55,7 +67,7 @@ const char* Sally::operator<<(int num){
 */
 const char* Sally::operator>>(int num){
     cout << "Shifting characters with right arrows by value: " << num << endl;
-    std::string currentString = (*this).str;
+    string currentString = (*this).str;
     const char *chars = currentString.c_str();
     char *keepShifted = new char[num+1];
     char *moveRight = new char[currentString.length()-num];

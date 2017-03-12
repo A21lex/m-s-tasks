@@ -11,5 +11,8 @@ int main()
     printf("\"example << 2\" results in %s\n", example << 2);
     printf("\"example << 2\" second time results in %s\n", example << 2);
     printf("\"example >> 3\" results in %s\n", example >> 3);
+    if(example == "tMicrosof"){
+        cout << "example is indeed tMicrosof" << endl;
+    }
 
 }

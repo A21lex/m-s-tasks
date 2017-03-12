@@ -10,6 +10,8 @@ class Sally
         Sally operator=(std::string);
         const char* operator<<(int);
         const char* operator>>(int);
+
+        bool operator==(std::string);
 };
 
 
