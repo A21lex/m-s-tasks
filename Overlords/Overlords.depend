@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1489327425 source:/home/aleksandrs/CodeBlocksProjects/Overlords/main.cpp
+	<iostream>
+	<stdio.h>
+	"Sally.h"
+
+1489327886 /home/aleksandrs/CodeBlocksProjects/Overlords/Sally.h
+
+1489327560 source:/home/aleksandrs/CodeBlocksProjects/Overlords/Sally.cpp
+	<iostream>
+	<stdio.h>
+	"Sally.h"
+	<cstring>
+
