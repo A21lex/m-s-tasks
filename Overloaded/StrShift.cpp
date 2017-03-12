@@ -1,32 +1,32 @@
 #include <iostream>
 #include <stdio.h>
-#include "Sally.h"
+#include "StrShift.h"
 #include <cstring>
 using namespace std;
 
-Sally::Sally()
+StrShift::StrShift()
 {
 
 }
 
-Sally::Sally(string text){
+StrShift::StrShift(string text){
     str = text;
 }
 
 /**
-    Overloaded assignment operator assigns a string to a "str" field of a Sally object
+    Overloaded assignment operator assigns a string to a "str" field of a StrShift object
 */
-Sally Sally::operator=(string passingString){
+StrShift StrShift::operator=(string passingString){
     cout << "Using overloaded assignment operator" << endl;
-    cout << "String passed to Sally is: " << passingString << endl;
+    cout << "String passed to StrShift is: " << passingString << endl;
     (*this).str = passingString;
     return(*this);
 
 }
 /**
-    Overloaded == operator checks equality of a Sally object with a given string
+    Overloaded == operator checks equality of a StrShift object with a given string
 */
-bool Sally::operator==(string stringToCheck){
+bool StrShift::operator==(string stringToCheck){
     cout << "Using overloaded == operator" << endl;
     cout << "Checking if " << (*this).str << " is equal to " << stringToCheck << endl;
     if((*this).str == stringToCheck){
@@ -38,7 +38,7 @@ bool Sally::operator==(string stringToCheck){
 /**
     Overloaded << shifts characters of a string to the left by a defined value
 */
-const char* Sally::operator<<(int num){
+const char* StrShift::operator<<(int num){
     cout << "Shifting characters with left arrows by value : " << num << endl;
     string currentString = (*this).str;
     const char *chars = currentString.c_str();
@@ -65,7 +65,7 @@ const char* Sally::operator<<(int num){
 /**
     Overloaded >> shifts characters of a string to the right by a defined value
 */
-const char* Sally::operator>>(int num){
+const char* StrShift::operator>>(int num){
     cout << "Shifting characters with right arrows by value: " << num << endl;
     string currentString = (*this).str;
     const char *chars = currentString.c_str();

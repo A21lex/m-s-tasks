@@ -1,13 +1,13 @@
-#ifndef SALLY_H
-#define SALLY_H
+#ifndef STRSHIFT_H
+#define STRSHIFT_H
 
-class Sally
+class StrShift
 {
     public:
-        Sally();
+        StrShift();
         std::string str;
-        Sally(std::string);
-        Sally operator=(std::string);
+        StrShift(std::string);
+        StrShift operator=(std::string);
         const char* operator<<(int);
         const char* operator>>(int);
 

@@ -1,11 +1,11 @@
 #include <iostream>
 #include <stdio.h>
-#include "Sally.h"
+#include "StrShift.h"
 using namespace std;
 
 int main()
 {
-    Sally example;
+    StrShift example;
     example = "Microsoft";
 
     printf("\"example << 2\" results in %s\n", example << 2);
