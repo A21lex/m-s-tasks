@@ -18,4 +18,10 @@ public class TestChangeCalculator {
         assertEquals(102, changeCalculator.makeChange(10006));
     }
 
+    @Test (expected = NumberFormatException.class)
+    public void testNumberFormatException(){
+        ChangeCalculator changeCalculator = new ChangeCalculator(); //testing negative inputs to changeCalculator
+        changeCalculator.makeChange(-10);
+    }
+
 }

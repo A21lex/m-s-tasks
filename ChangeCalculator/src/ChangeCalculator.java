@@ -19,6 +19,9 @@ public class ChangeCalculator {
             }};
 
     int makeChange(int amountGiven) {
+        if(amountGiven < 0) {
+            throw new NumberFormatException("Only positive integers or 0 are allowed");
+        }
         //if we need to give change for an existing bill it is just the bill itself, so return 1
         if (possibleBills.contains(amountGiven)) {
             System.out.println("amountGiven is equal to one of the bills, return 1");
