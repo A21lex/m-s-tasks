@@ -24,7 +24,7 @@ StrShift StrShift::operator=(string passingString){
 
 }
 /**
-    Overloaded == operator checks equality of a StrShift object with a given string
+    Overloaded == operator for a string checks equality of a StrShift object with the given string
 */
 bool StrShift::operator==(string stringToCheck){
     cout << "Using overloaded == operator" << endl;
@@ -34,13 +34,29 @@ bool StrShift::operator==(string stringToCheck){
     }
     return false;
 }
+/**
+    Overloaded == operator for a StrShift object checks equality of the StrShift object with another StrShift object
+    (checking if their strs are the same)
+*/
+bool StrShift::operator==(StrShift anotherStrShift){
+    cout << "Using overloaded == operator" << endl;
+    cout << "Checking if " << (*this).str << " is equal to " << anotherStrShift.str << endl;
+    if((*this).str == anotherStrShift.str){
+        return true;
+    }
+    return false;
+}
 
 /**
     Overloaded << shifts characters of a string to the left by a defined value
 */
 const char* StrShift::operator<<(int num){
+    if (num < 0){
+            num = (*this).str.length() + num;
+    }
     cout << "Shifting characters with left arrows by value : " << num << endl;
     string currentString = (*this).str;
+    num %= currentString.length(); //num must be mod stringLength to avoid trying to access unassigned memory
     const char *chars = currentString.c_str();
     char *keepShifted = new char[currentString.length()-num];
     char *moveLeft = new char[num + 1];
@@ -56,6 +72,7 @@ const char* StrShift::operator<<(int num){
     char result[currentString.length()];
     strcpy(result, moveLeft);
     strcat(result, keepShifted);
+    //strcat(result, '\0');
     //Assign the string value to the string of the object
     (*this).str = result;
     const char* resultCharArray = result;
@@ -66,8 +83,12 @@ const char* StrShift::operator<<(int num){
     Overloaded >> shifts characters of a string to the right by a defined value
 */
 const char* StrShift::operator>>(int num){
+    if (num < 0){
+            num = (*this).str.length() + num;
+    }
     cout << "Shifting characters with right arrows by value: " << num << endl;
     string currentString = (*this).str;
+    num %= currentString.length(); //num must be mod stringLength to avoid trying to access unassigned memory
     const char *chars = currentString.c_str();
     char *keepShifted = new char[num+1];
     char *moveRight = new char[currentString.length()-num];

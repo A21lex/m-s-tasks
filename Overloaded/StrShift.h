@@ -10,8 +10,8 @@ class StrShift
         StrShift operator=(std::string);
         const char* operator<<(int);
         const char* operator>>(int);
-
         bool operator==(std::string);
+        bool operator==(StrShift);
 };
 
 
